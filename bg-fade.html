@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Crossfade Background Images</title>
-    <style>
-      .container {
-        width: 100%;
-        height: 400px; /* Adjust height as needed */
-        position: relative;
-        overflow: hidden;
-      }
 
-      .bg-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        transition: opacity 1s ease-in-out;
-        opacity: 1;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Crossfade Background Images</title>
+  <style>
+    .container {
+      width: 100%;
+      height: 400px;
+      /* Adjust height as needed */
+      position: relative;
+      overflow: hidden;
+    }
 
-      .bg-image.fade-out {
-        opacity: 0;
-      }
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+    }
 
-      /* Add more background images here */
-      .bg-image.image1 {
-        background-image: url("pages/1-large.jpg");
-      }
+    .bg-image.fade-out {
+      opacity: 0;
+    }
 
-      .bg-image.image2 {
-        background-image: url("pages/2-large.jpg");
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="bg-image image1"></div>
-      <div class="bg-image image2 fade-out"></div>
-    </div>
+    /* Add more background images here */
+    .bg-image.image1 {
+      background-image: url("pages/1-large.png");
+    }
 
-    <script>
-      // JavaScript to toggle the fade-out class and create a crossfade effect
-      document.addEventListener("DOMContentLoaded", function () {
-        var images = document.querySelectorAll(".bg-image");
-        var currentIndex = 0;
+    .bg-image.image2 {
+      background-image: url("pages/2-large.png");
+    }
+  </style>
+</head>
 
-        setInterval(function () {
-          var nextIndex = (currentIndex + 1) % images.length;
-          images[currentIndex].classList.add("fade-out");
-          images[nextIndex].classList.remove("fade-out");
-          currentIndex = nextIndex;
-        }, 5000); // Change the duration as needed (milliseconds)
-      });
-    </script>
-  </body>
+<body>
+  <div class="container">
+    <div class="bg-image image1"></div>
+    <div class="bg-image image2 fade-out"></div>
+  </div>
+
+  <script>
+    // JavaScript to toggle the fade-out class and create a crossfade effect
+    document.addEventListener("DOMContentLoaded", function () {
+      var images = document.querySelectorAll(".bg-image");
+      var currentIndex = 0;
+
+      setInterval(function () {
+        var nextIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add("fade-out");
+        images[nextIndex].classList.remove("fade-out");
+        currentIndex = nextIndex;
+      }, 5000); // Change the duration as needed (milliseconds)
+    });
+  </script>
+</body>
+
 </html>
