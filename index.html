@@ -7,11 +7,12 @@
 <html lang="en"> <!--<![endif]-->
 
 <head>
-	<title>Using turn.js and the new zoom feature</title>
+	<title>Project Origin</title>
 	<meta name="viewport" content="width = 1050, user-scalable = no" />
 	<script type="text/javascript" src="./js/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="./js/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="./js/hash.js"></script>
+	<link rel="stylesheet" href="index.css">
 
 </head>
 
@@ -55,19 +56,9 @@
 						<img src="pages/7-thumb.png" width="76" height="100" class="page-7">
 						<span>6-7</span>
 					</li>
-					<li class="d">
-						<img src="pages/8-thumb.png" width="76" height="100" class="page-8">
-						<img src="pages/9-thumb.png" width="76" height="100" class="page-9">
-						<span>8-9</span>
-					</li>
-					<li class="d">
-						<img src="pages/10-thumb.png" width="76" height="100" class="page-10">
-						<img src="pages/11-thumb.png" width="76" height="100" class="page-11">
-						<span>10-11</span>
-					</li>
 					<li class="i">
-						<img src="pages/12-thumb.png" width="76" height="100" class="page-12">
-						<span>12</span>
+						<img src="pages/8-thumb.png" width="76" height="100" class="page-12">
+						<span>8</span>
 					</li>
 					<ul>
 						<div>
@@ -123,12 +114,38 @@
 
 						// The number of pages
 
-						pages: 12,
+						pages: 8,
 
 						// Events
 
 						when: {
 							turning: function (event, page, view) {
+
+								switch (page) {
+									case 2:
+										document.body.style.backgroundImage = "url('pics/bg/2.png')";
+										break;
+									case 3:
+										document.body.style.backgroundImage = "url('pics/bg/3.png')";
+										break;
+									case 4:
+										document.body.style.backgroundImage = "url('pics/bg/4.png')";
+										break;
+									case 5:
+										document.body.style.backgroundImage = "url('pics/bg/5.png')";
+										break;
+									case 6:
+										document.body.style.backgroundImage = "url('pics/bg/6.png')";
+										break;
+									case 7:
+										document.body.style.backgroundImage = "url('pics/bg/7.png')";
+										break;
+									case 8:
+										document.body.style.backgroundImage = "url('pics/bg/8.png')";
+										break;
+									default:
+										document.body.style.backgroundImage = "url('pics/bg/1.png')";
+								}
 
 								var book = $(this),
 									currentPage = book.turn('page'),
