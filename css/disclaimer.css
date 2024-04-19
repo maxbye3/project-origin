@@ -1,0 +1,11 @@
+.disclaimer{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    background: #f3f3f3;
+    width: 100vw;
+    font-family: monospace;
+    line-height: 1.5em;
+    font-size: 1em;
+}
