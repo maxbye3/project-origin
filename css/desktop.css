@@ -54,3 +54,17 @@ body.hide-overflow {
     max-width: 100%;
     height: 100%;
 }
+
+.loadOnly {
+    position: absolute;
+    opacity: 0;
+}
+
+.disclaimer {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    background: #fbf5f5;
+    padding: 0 10px;
+    border-radius: 5px;
+}
