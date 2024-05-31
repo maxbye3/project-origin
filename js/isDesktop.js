@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // setTimeout(() => {
 
     function redirectIfNeeded() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 768 && window.innerHeight > 400) {
             window.location.href = './desktop.html';
         }
     }
